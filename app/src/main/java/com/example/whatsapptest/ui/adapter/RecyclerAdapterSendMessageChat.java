@@ -1,5 +1,6 @@
 package com.example.whatsapptest.ui.adapter;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.whatsapptest.R;
 import com.example.whatsapptest.databinding.ItemChatMessageBinding;
 import com.example.whatsapptest.model.ChatMessageModel;
+import com.example.whatsapptest.ui.activity.Chat;
 
 import java.util.ArrayList;
 
@@ -31,6 +33,14 @@ public class RecyclerAdapterSendMessageChat extends RecyclerView.Adapter<Recycle
     @Override
     public void onBindViewHolder(@NonNull messageHolder holder, int position) {
         ChatMessageModel chatMessageModel = message.get(position);
+        //if and else for 2 users can send message
+        if (chatMessageModel.getSenderId().equals(Chat.USER_ID)){
+            holder.binding.textMessage.setGravity(Gravity.END);
+
+        }
+        else {
+            holder.binding.textMessage.setGravity(Gravity.START);
+        }
         holder.binding.textMessage.setText(chatMessageModel.getMessage());
 
     }

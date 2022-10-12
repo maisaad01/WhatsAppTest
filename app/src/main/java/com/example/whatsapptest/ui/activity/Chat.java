@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.whatsapptest.R;
 import com.example.whatsapptest.databinding.ActivityChatBinding;
 import com.example.whatsapptest.model.ChatMessageModel;
 import com.example.whatsapptest.ui.adapter.RecyclerAdapterSendMessageChat;
@@ -21,7 +20,8 @@ import java.util.ArrayList;
 public class Chat extends AppCompatActivity {
     private ActivityChatBinding binding ;
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-    public final String USER_ID = "A123" ;
+    //when change the USER_ID it will change the side which message sent
+    public final static String USER_ID = "A123" ;
     ArrayList <ChatMessageModel> messageModels = new ArrayList<>();
     RecyclerAdapterSendMessageChat Adapter = new RecyclerAdapterSendMessageChat();
 
@@ -36,9 +36,7 @@ public class Chat extends AppCompatActivity {
                 String message = binding.enterMessage.getText().toString().trim();
                 if (!message.isEmpty())
                     sendMessages(message);
-
             }
-
         });
         getData();
     }
@@ -51,22 +49,17 @@ public class Chat extends AppCompatActivity {
         ref.child("message").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                messageModels.clear();
                 for (DataSnapshot snapshot1 : snapshot.getChildren()){
                     messageModels.add(snapshot1.getValue(ChatMessageModel.class));
-
                 }
-                //Adapter.setList(messageModels);
+                Adapter.setMessage(messageModels);
                 binding.RecyclerViewMessages.setAdapter(Adapter);
-
-
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
     }
-
-
 }
