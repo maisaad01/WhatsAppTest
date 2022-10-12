@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_15sdp"
+    android:padding="@dimen/_10sdp"
+    android:paddingVertical="@dimen/_3sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/user_status_img"
+        android:layout_width="@dimen/_55sdp"
+        android:layout_height="@dimen/_55sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@color/black"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/userName_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/user_status_img"
+        app:layout_constraintBottom_toBottomOf="@+id/user_status_img"
+        android:text="@string/username_status"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/user_status_img"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:textSize="@dimen/_14sdp"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/timeStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/time"
+        android:textStyle="italic"
+        android:textColor="#676666"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintStart_toEndOf="@+id/user_status_img"
+        app:layout_constraintTop_toBottomOf="@id/userName_status" />
+
+    <ImageView
+        android:layout_width="@dimen/_25ssp"
+        android:layout_height="@dimen/_25ssp"
+        android:src="@drawable/ic_baseline_local_phone_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.896"
+        app:layout_constraintStart_toEndOf="@+id/userName_status"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.644" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

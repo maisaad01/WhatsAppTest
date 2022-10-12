@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/_4sdp"
+    tools:context=".ui.activity.Chat">
+
+
+    <RelativeLayout
+        android:id="@+id/layout_user"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#07886D">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_img_chat"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:src="@color/black" />
+
+        <ImageView
+            android:id="@+id/back_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back_24" />
+        <LinearLayout
+            android:id="@+id/user_and_online"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/user_img_chat"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/username_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/user_img_chat"
+                android:text="@string/username"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/user_img_chat"
+                android:text="@string/online"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp"
+
+                />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/sitting_chat"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:src="@drawable/ic_baseline_more_vert_24"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/_8sdp"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/call_chat"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:src="@drawable/ic_baseline_call_24"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/sitting_chat"
+            android:layout_margin="@dimen/_8sdp"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/video_chat"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:src="@drawable/ic_baseline_video_24"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/call_chat"
+            android:layout_margin="@dimen/_8sdp"
+            app:tint="@color/white" />
+
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/_10sdp">
+
+        <EditText
+            android:id="@+id/enterMessage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginLeft="@dimen/_16sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:layout_toLeftOf="@id/sendBtn"
+            android:drawableStart="@drawable/ic_baseline_insert_emoticon_24"
+            android:drawableEnd="@drawable/ic_baseline_camera_alt_24"
+            android:drawablePadding="@dimen/_10sdp"
+            android:drawableTint="#676060"
+            android:hint="@string/message"
+            android:paddingStart="@dimen/_10sdp"
+            android:textColorHint="#676060"
+            android:textStyle="bold" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/sendBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:backgroundTint="#07886D"
+            android:src="@drawable/ic_baseline_send_24"
+            android:tint="@color/white" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layout_user">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RecyclerViewMessages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/bottom"
+            android:layout_below="@id/layout_user"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            tools:ignore="NotSibling" />
+    </RelativeLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

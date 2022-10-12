@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.LoginPagePhoneNum">
+    <TextView
+        android:layout_marginTop="@dimen/_30ssp"
+        android:id="@+id/verify_by_phone_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/verify_by_phone_number"
+        android:textColor="#25D266"
+        android:padding="@dimen/_40ssp"
+        android:textStyle="bold"
+        android:textSize="@dimen/_20sdp"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/enterPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50ssp"
+        android:textColorHighlight="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/verify_by_phone_number"
+        android:layout_marginTop="@dimen/_30ssp"
+        android:hint="@string/enterPhoneNumber"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/send_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHighlight="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/enterPhoneNumber"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/send_code"
+        android:textStyle="bold"
+        android:background="#25D266"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/enterCode"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50ssp"
+        app:layout_constraintTop_toBottomOf="@+id/send_code"
+        android:layout_marginTop="@dimen/_30ssp"
+        android:hint="@string/code"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/verify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/enterCode"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/verify"
+        android:textStyle="bold"
+        android:background="#25D266"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">WhatsApp</string>
+    <string name="meta">meta</string>
+    <string name="chats">CHATS</string>
+    <string name="status">STATUS</string>
+    <string name="calls">CALLS</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="username">username</string>
+    <string name="test">test</string>
+    <string name="time">time</string>
+    <string name="username_status">username status</string>
+    <string name="username_call">username call</string>
+    <string name="timeData">Time and Data</string>
+    <string name="timechat">timecchat</string>
+    <string name="timeChat">Time Chat</string>
+    <string name="new_group">New group</string>
+    <string name="newBroadcast">New broadcast</string>
+    <string name="linkedDevices">Linked devices</string>
+    <string name="StarredMessages">Starred messages</string>
+    <string name="settings">Settings</string>
+    <string name="statusPrivacy">Status privacy</string>
+    <string name="clearCallLog">Clear call log</string>
+    <string name="from">from</string>
+    <string name="verify_by_phone_number">Verify By Phone Number</string>
+    <string name="enterPhoneNumber">Phone Number</string>
+    <string name="send_code">Send Code</string>
+    <string name="code">Code</string>
+    <string name="verify">Verify</string>
+    <string name="send_text">"Send "</string>
+    <string name="edit_text">Text</string>
+    <string name="online">Online</string>
+    <string name="message">Message</string>
+</resources>
