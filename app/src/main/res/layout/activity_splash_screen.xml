@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.Splash_Screen">
 
+
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/whats_app_logo"
         android:layout_width="0sp"

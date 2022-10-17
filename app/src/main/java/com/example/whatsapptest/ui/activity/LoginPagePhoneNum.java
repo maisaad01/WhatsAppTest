@@ -62,7 +62,7 @@ public class LoginPagePhoneNum extends AppCompatActivity {
     private void unitUi() {
         phoneNum = findViewById(R.id.enterPhoneNumber);
         code = findViewById(R.id.enterCode);
-        sendCode = findViewById(R.id.search);
+        sendCode = findViewById(R.id.send_code);
         verify = findViewById(R.id.verify);
         auth = FirebaseAuth.getInstance();
     }
