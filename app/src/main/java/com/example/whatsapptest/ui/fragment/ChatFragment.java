@@ -113,6 +113,10 @@ public class ChatFragment extends Fragment {
         if(id == R.id.search){
             Toast.makeText(getActivity(),"Search",Toast.LENGTH_LONG).show();
         }
+
+        if(id == R.id.camera){
+            Toast.makeText(getActivity(),"Camera",Toast.LENGTH_LONG).show();
+        }
         return super.onOptionsItemSelected(item);
     }
 }

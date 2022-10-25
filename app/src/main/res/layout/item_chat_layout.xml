@@ -31,7 +31,7 @@
         />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/Contants"
+        android:id="@+id/Contents"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"

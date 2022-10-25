@@ -1,14 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.StatusFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.StatusFragment"
+    android:orientation="horizontal">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/statusBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingBottom="@dimen/_13sdp"
+        android:paddingTop="@dimen/_10sdp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userImgStatusBar"
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_55sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@color/black"
+            android:layout_marginStart="@dimen/_10sdp"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/userNameStatusBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@string/my_status"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/userImgStatusBar"
+            app:layout_constraintStart_toEndOf="@+id/userImgStatusBar"
+            app:layout_constraintTop_toTopOf="@+id/userImgStatusBar"
+            app:layout_constraintVertical_bias="0.318" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/addContentStatusBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/tap_to_add_status_update"
+            android:textColor="#676666"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toEndOf="@id/userImgStatusBar"
+            app:layout_constraintTop_toBottomOf="@id/userNameStatusBar" />
+        <TextView
+            android:id="@+id/resentUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userImgStatusBar"
+            android:text="@string/recent_updates"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:textStyle="italic"
+            android:textSize="@dimen/_13sdp"
+            android:paddingStart="@dimen/_15sdp"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/statusRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/item_status_layout"/>
+        tools:listitem="@layout/item_status_layout"
+        app:layout_constraintTop_toBottomOf="@id/statusBar"/>
 
-</FrameLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/statusPen_btn"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_gravity="bottom|end"
+        android:backgroundTint="#B3B6B5"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:src="@drawable/ic_baseline_edit_24"
+        app:fabCustomSize="@dimen/_45sdp"
+        app:tint="#424040"
+        app:layout_constraintBottom_toTopOf="@id/statusCamera_btn"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/statusCamera_btn"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_gravity="bottom|end"
+        android:backgroundTint="@color/whatsapp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:src="@drawable/ic_baseline_camera_alt_24"
+        app:fabCustomSize="@dimen/_50sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

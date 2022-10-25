@@ -17,7 +17,7 @@
        android:layout_width="@dimen/_50sdp"
        android:layout_height="@dimen/_50sdp"
        android:layout_gravity="bottom|end"
-       android:backgroundTint="#24D467"
+       android:backgroundTint="@color/whatsapp"
        android:layout_marginBottom="@dimen/_15sdp"
        android:layout_marginEnd="@dimen/_15sdp"
        android:src="@drawable/icon_message"

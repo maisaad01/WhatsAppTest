@@ -25,9 +25,9 @@ public class MainViewPagerAdapter extends FragmentStateAdapter {
             case 0 :
                 return new ChatFragment();
             case 1 :
-                return new CallsFragment();
-            case 2 :
                 return new StatusFragment();
+            case 2 :
+                return new CallsFragment();
         }
         return new Fragment();
     }

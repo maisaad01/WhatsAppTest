@@ -33,7 +33,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter <RecyclerAdapter.chatH
         ChatModel chatModel = chat.get(position);
         holder.userImg.setImageResource(chatModel.getUserImage());
         holder.userName.setText(chatModel.getUserName());
-        holder.contants.setText(chatModel.getContants());
+        holder.contents.setText(chatModel.getContants());
         holder.timeChat.setText(chatModel.getTimeChat());
     }
 
@@ -46,13 +46,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter <RecyclerAdapter.chatH
     }
 
     static class chatHolder extends RecyclerView.ViewHolder {
-        TextView userName , contants ,timeChat ;
+        TextView userName , contents ,timeChat ;
         ImageView userImg ;
         public chatHolder(@NonNull View itemView) {
             super(itemView);
             userName = itemView.findViewById(R.id.userName);
             userImg = itemView.findViewById(R.id.userImg);
-            contants = itemView.findViewById(R.id.Contants);
+            contents = itemView.findViewById(R.id.Contents);
             timeChat = itemView.findViewById(R.id.timeChat);
         }
     }
