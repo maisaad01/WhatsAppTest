@@ -1,12 +1,14 @@
 package com.example.whatsapptest.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
 import com.example.whatsapptest.R;
 import com.example.whatsapptest.ui.adapter.MainViewPagerAdapter;
+import com.example.whatsapptest.ui.fragment.ChatFragment;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initUi();
+        //showFragment(new ChatFragment());
     }
     private void initUi () {
         viewPagerAdapter =new MainViewPagerAdapter(getSupportFragmentManager(),this.getLifecycle(),3);
@@ -44,5 +47,12 @@ public class MainActivity extends AppCompatActivity {
         });
         // tabLayout.getTabAt(0).setIcon(R.drawable.ic_baseline_camera_alt_24);
     }
+
+//    private void showFragment (Fragment fragment){
+//        getSupportFragmentManager().beginTransaction()
+//                .replace(R.id.main_container,fragment)
+//                .commit();
+//
+//    }
 
 }

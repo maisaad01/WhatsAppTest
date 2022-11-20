@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -78,7 +79,7 @@ public class LoginPagePhoneNum extends AppCompatActivity {
 
     }
 
-private final PhoneAuthProvider.OnVerificationStateChangedCallbacks
+     private  PhoneAuthProvider.OnVerificationStateChangedCallbacks
 
      mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
@@ -87,12 +88,12 @@ private final PhoneAuthProvider.OnVerificationStateChangedCallbacks
             final String code =credential.getSmsCode();
             if (code != null )
                 verifyCode(code);
-
-
         }
 
         @Override
         public void onVerificationFailed(@NonNull FirebaseException e) {
+
+            Log.d("tttttttt", "onVerificationFailed: "+e.getLocalizedMessage());
             Toast.makeText(LoginPagePhoneNum.this, "Verification Failed", Toast.LENGTH_SHORT).show();
         }
 

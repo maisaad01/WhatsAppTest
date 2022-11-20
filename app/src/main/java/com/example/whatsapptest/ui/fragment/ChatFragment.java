@@ -1,5 +1,6 @@
 package com.example.whatsapptest.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -8,21 +9,26 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.whatsapptest.R;
 import com.example.whatsapptest.model.ChatModel;
+import com.example.whatsapptest.ui.activity.Chat;
+import com.example.whatsapptest.ui.activity.LoginPagePhoneNum;
+import com.example.whatsapptest.ui.activity.Splash_Screen;
 import com.example.whatsapptest.ui.adapter.RecyclerAdapter;
 
 import java.util.ArrayList;
 
-public class ChatFragment extends Fragment {
+public class ChatFragment extends Fragment implements RecyclerAdapter.ChatClickListener {
     RecyclerView recyclerView ;
     RecyclerAdapter recyclerAdapter;
     ArrayList <ChatModel> data = new ArrayList<>();
@@ -30,12 +36,29 @@ public class ChatFragment extends Fragment {
     public ChatFragment() {
         // Required empty public constructor
     }
+    //TextView name ;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         recyclerView = view.findViewById(R.id.chatRecyclerView);
+//        name = view.findViewById(R.id.userName);
+//        name.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getActivity()
+//                        .getSupportFragmentManager()
+//                        .beginTransaction()
+//                        .add(R.id.main_container,new TestFragment())
+//                        .addToBackStack("")
+//                        .commit();
+//
+//
+//            }
+//        });
         setUp();
+
+
     }
 
     @Override
@@ -47,7 +70,7 @@ public class ChatFragment extends Fragment {
 
     private  void setUp (){
         addFakeData();
-        recyclerAdapter = new RecyclerAdapter(data);
+        recyclerAdapter = new RecyclerAdapter(data,this::onChatClick);
         recyclerView.setAdapter(recyclerAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(
                 getContext()
@@ -118,5 +141,10 @@ public class ChatFragment extends Fragment {
             Toast.makeText(getActivity(),"Camera",Toast.LENGTH_LONG).show();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onChatClick(ChatModel chatModel) {
+        startActivity(new Intent(requireActivity() , Chat.class));
     }
 }
